@@ -7,139 +7,70 @@ import { github, vsDark } from "@code-surfer/themes";
 
 export const theme = vsDark;
 
-# Hello 👋
+# Vue 作品實戰班作品發表會
 
-You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
+### 發表人：綿羊
 
----
+### 專案名稱：碁人館
 
-<CodeSurfer>
-
-```js title="This is a title" subtitle="and this a subtitle"
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-```
-
-```js
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
-
-function adipiscing(...elit) {
-  if (!elit.sit) {
-    return [];
-  }
-
-  const sed = elit[0];
-  return eiusmod.tempor(sed) ? sed : [sed];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-```
-
-```diff 1[10:14],2[15:19],3[22:27],10:12
-
-```
-
-</CodeSurfer>
+### 一個基於 Vue 全家桶與 Bootstrap5 所開發的電商網站。
 
 ---
 
-<CodeSurferColumns themes={[vsDark, github]}>
+### 使用的技術
+
+#### 專案中基於 Vue 的相關技術
+
+- Vue 3.0 (使用 Composition API)
+- Vue Cli 開發環境
+- Vue Router 單頁路由
+- Vuex 狀態管理
+- VueUse 工具庫
+- Vue Loading Overlay 讀取套件
+- VeeValidate 表單驗證套件
+
+---
+
+<CodeSurferColumns>
 
 <Step>
 
-```js
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
-```
+## 流程
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
+```markdown 1
+## 1.網站簡介
+
+## 2.為什麼選這個主題?
+
+## 3.今日分享的主題
 ```
 
 </Step>
 
 <Step>
 
-```js
-const lorem = (ipsum, dolor, sit) => {
-  const amet = dolor - ipsum;
-  return consectetur.adipiscing(
-    {
-      elit: sed.eiusmod(sit - dolor) / amet + 2,
-    },
-    (tempor, incididunt) => ipsum + amet * incididunt
-  );
-};
+## 流程
 
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```markdown 3
+## 1.網站簡介
+
+## 2.為什麼選這個主題?
+
+## 3.今日分享的主題
 ```
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
+</Step>
 
-const sed = (eiusmod, tempor, incididunt) => {
-  const ut = tempor - eiusmod;
-  return labore.et(
-    {
-      amet: dolore.magna(incididunt - tempor) / ut + 2,
-    },
-    (aliqua, elit) => eiusmod + ut * elit
-  );
-};
+<Step>
+
+## 流程
+
+```markdown 5
+## 1.網站簡介
+
+## 2.為什麼選這個主題?
+
+## 3.今日分享的主題
 ```
 
 </Step>
@@ -148,5 +79,750 @@ const sed = (eiusmod, tempor, incididunt) => {
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+透過自定義的 Hook 去封裝會多次重複使用的邏輯
+
+---
+
+<CodeSurferColumns>
+
+<Step>
+
+## 自定義 Hook
+
+```markdown
+## 1.Bootstrap Modal
+
+## 2.Bootstrap Collapse
+
+## 3.上傳圖片邏輯
+```
+
+</Step>
+
+<Step>
+
+## 自定義 Hook
+
+```markdown 1
+## 1.Bootstrap Modal
+
+## 2.Bootstrap Collapse
+
+## 3.上傳圖片邏輯
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js title="助教範例" subtitle="使用 mixins 來處理"
+import Modal from "bootstrap/js/dist/modal";
+
+export default {
+  methods: {
+    openModal() {
+      this.modal.show();
+    },
+    hideModal() {
+      this.modal.hide();
+    },
+  },
+  mounted() {
+    this.modal = new Modal(this.$refs.modal);
+  },
+};
+```
+
+```diff 1 subtitle="引入 Modal"
+
+```
+
+```diff 12:14 subtitle="在元件掛載完成時建立一個 Modal 實體"
+
+```
+
+```diff 4:11 subtitle="在 Methods 裡寫打開和關閉的方法"
+
+```
+
+```js 1,3 subtitle="在元件中引入"
+import modalMixin from "@/mixins/modalMixin";
+export default {
+  mixins: [modalMixin],
+};
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```jsx title="我的作業" subtitle="使用 Composition API 來封裝"
+import Modal from "bootstrap/js/dist/modal";
+import { ref, onMounted } from "vue";
+
+export const useBsModal = (RefImpl) => {
+  let bsModal = null;
+  onMounted(() => {
+    bsModal = new Modal(RefImpl.value);
+  });
+
+  const openModal = () => {
+    bsModal.show();
+  };
+
+  const closeModal = () => {
+    bsModal.hide();
+  };
+
+  return {
+    openModal,
+    closeModal,
+  };
+};
+```
+
+```diff 4 subtitle="向外匯出一個函式"
+
+```
+
+```diff 5:8 subtitle="在元件掛載時建立一個 Modal 實體"
+
+```
+
+```diff 10,14 subtitle="打開和關閉的方法"
+
+```
+
+```diff 18:21 subtitle="將剛剛的兩個方法當成這個函式的返回值 return 出去"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```jsx subtitle="在元件中引入"
+<template>
+// Modal
+<div ref="ProductModalRef" class="modal fade">
+  <div class="modal-dialog">
+    ...
+  </div>
+</div>
+</template>
+
+<script>
+import { ref } from 'vue'
+import { useBsModal } from '@/hooks'
+
+export default {
+  name: 'ProductModal',
+  setup(props) {
+    const ProductModalRef = ref(null)
+    const { openModal, closeModal } = useBsModal(ProductModalRef)
+
+    return {
+      ProductModalRef,
+      openModal,
+      closeModal
+    }
+  }
+}
+</script>
+```
+
+```diff 3 subtitle="用 ref 綁定要使用的 Modal 元素"
+
+```
+
+```diff 12,18 subtitle="呼叫剛才封裝的函式並將 ref 傳入"
+
+```
+
+```diff 22,23 subtitle="把 openModal closeModal 返回出去"
+
+```
+
+```jsx diff 2 subtitle="然後就可以在父元件使用它的方法將它打開"
+<template>
+  <ProductModal ref="productModalCom" />
+</template>
+
+<script>
+import { ref } from 'vue'
+import productModal from './components/productModal.vue'
+export default {
+  name: 'ProductList',
+  components: { productModal },
+  setup() {
+    const productModalCom = ref(null)
+    const openproductModal = () => {
+      productModalCom.value.openModal()
+    }
+    return {
+      openproductModal,
+      productModalCom
+    }
+  }
+}
+</script>
+```
+
+```diff 14 subtitle="然後就可以在父元件使用它的方法將它打開"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns>
+
+<Step>
+
+## 自定義 Hook
+
+```markdown 1
+## 1.Bootstrap Modal
+
+## 2.Bootstrap Collapse
+
+## 3.上傳圖片邏輯
+```
+
+</Step>
+
+<Step>
+
+## 自定義 Hook
+
+```markdown 3
+## 1.Bootstrap Modal
+
+## 2.Bootstrap Collapse
+
+## 3.上傳圖片邏輯
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step>
+
+## 如何操控漢堡選單的開關?
+
+```jsx
+<template>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top"
+  >
+    <div class="container">
+      <RouterLink class="navbar-brand" to="/">前台頁面</RouterLink>
+      <button class="navbar-toggler" type="button" @click="handlerToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        :class="{ show: isOpen }"
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item" @click="handlerToggle">
+            <RouterLink class="nav-link" to="/products">
+              前台產品列表
+            </RouterLink>
+          </li>
+          // (略) ...
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script>
+import { ref } from 'vue'
+export default {
+  name: 'AppNavbar',
+  setup() {
+    const isOpen = ref(false)
+    const handlerToggle = () => {
+      isOpen.value = !isOpen.value
+    }
+    return { isOpen, handlerToggle }
+  }
+}
+</script>
+```
+
+</Step>
+
+<Step>
+
+## 如何操控漢堡選單的開關?
+
+```jsx diff 7[51:74],11,16[31:54]
+<template>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top"
+  >
+    <div class="container">
+      <RouterLink class="navbar-brand" to="/">前台頁面</RouterLink>
+      <button class="navbar-toggler" type="button" @click="handlerToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        :class="{ show: isOpen }"
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item" @click="handlerToggle">
+            <RouterLink class="nav-link" to="/products">
+              前台產品列表
+            </RouterLink>
+          </li>
+          // (略) ...
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script>
+import { ref } from 'vue'
+export default {
+  name: 'AppNavbar',
+  setup() {
+    const isOpen = ref(false)
+    const handlerToggle = () => {
+      isOpen.value = !isOpen.value
+    }
+    return { isOpen, handlerToggle }
+  }
+}
+</script>
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+![](https://i.imgur.com/MMGQuwC.png)
+
+---
+
+實作後確實有效，然而又出現另一個問題:在切換頁面後它不會自己關起來
+
+---
+
+<CodeSurfer>
+
+```jsx title="我的解法" subtitle="道理和剛剛的 Modal 相同"
+import Collapse from "bootstrap/js/dist/collapse";
+export const useBsCollapse = (RefImpl) => {
+  let bsCollapse = null;
+  onMounted(() => {
+    bsCollapse = new Collapse(RefImpl.value, {
+      toggle: false,
+    });
+  });
+
+  const closeNavHam = () => {
+    bsCollapse.hide();
+  };
+
+  const toggleNavHam = () => {
+    bsCollapse.toggle();
+  };
+
+  return {
+    closeNavHam,
+    toggleNavHam,
+  };
+};
+```
+
+```diff 1 subtitle="引入 Collapse"
+
+```
+
+```diff 2 subtitle="向外匯出一個函式"
+
+```
+
+```diff 3:8 subtitle="在元件掛載時建立一個 Modal 實體"
+
+```
+
+```diff 10,14 subtitle="關閉和開合的方法"
+
+```
+
+```diff 18:21 subtitle="將剛剛的兩個方法當成這個函式的返回值 return 出去"
+
+```
+
+```jsx subtitle="然後就可以在元件裡使用它了"
+<template>
+  // --- (略) ---
+  <button class="navbar-toggler" type="button" @click="toggleNavHam">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  // --- (略) ---
+  <li class="nav-item">
+    <router-Link class="nav-link" to="/whatisgo" @click="closeNavHam">
+      認識圍棋
+    </router-link>
+  </li>
+  // --- (略) ---
+</template>
+<script>
+import { ref } from 'vue'
+import { useBsCollapse } from '@/hooks'
+export default {
+  name: 'AppNavbar',
+  setup() {
+    const navbarCollapseRef = ref(null)
+    const { closeNavHam, toggleNavHam } = useBsCollapse(navbarCollapseRef)
+
+    return {
+      navbarCollapseRef,
+      closeNavHam,
+      toggleNavHam
+    }
+  }
+}
+</script>
+```
+
+```diff 3[47:68],8[49:69],16,21,25,26
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns>
+
+<Step>
+
+## 自定義 Hook
+
+```markdown 3
+## 1.Bootstrap Modal
+
+## 2.Bootstrap Collapse
+
+## 3.上傳圖片邏輯
+```
+
+</Step>
+
+<Step>
+
+## 自定義 Hook
+
+```markdown 5
+## 1.Bootstrap Modal
+
+## 2.Bootstrap Collapse
+
+## 3.上傳圖片邏輯
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+圖片上傳會使用在新增 / 編輯產品的 Modal 以及文字編輯器
+
+---
+
+![](https://i.imgur.com/7AdPRjO.png)
+
+---
+
+![](https://i.imgur.com/urPNL9c.png)
+
+---
+
+<CodeSurfer>
+
+```jsx title="封裝 useUpload 方法" subtitle="一樣透過組合 API 去封裝"
+export const useUpload = () => {
+  const uploadInputRef = ref(null);
+  const file = ref(null);
+
+  const getUploadFile = () => {
+    file.value = uploadInputRef.value.files[0];
+  };
+
+  const upload = async () => {
+    // 判斷是否有上傳圖片
+    if (!file.value)
+      return Message({ text: "請先上傳圖片" });
+
+    const formData = new FormData();
+    formData.append("file-to-upload", file.value);
+
+    const data = await uploadImage(formData);
+    if (data.success) {
+      Message({ type: "success", text: "圖片上傳成功" });
+      return data.imageUrl;
+    }
+    Message({
+      type: "error",
+      text: "僅限上傳 jpg、jpeg 與 png 格式",
+    });
+  };
+
+  return {
+    uploadInputRef,
+    file,
+    getUploadFile,
+    upload,
+  };
+};
+```
+
+```diff 1 subtitle="向外匯出一個函式"
+
+```
+
+```diff 2,3 subtitle="定義需要用到的 data 然後返回出去"
+
+```
+
+```diff 5:7 subtitle="拿到上傳的圖片資料方法"
+
+```
+
+```diff 9:26 subtitle="上傳圖片方法"
+
+```
+
+```diff 28:33 subtitle="返回 uploadInputRef, file, getUploadFile, upload 出去"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="在需要使用的地方呼叫它">
+
+```js
+// 可以在 ProductModal.vue 中匯入使用：
+```
+
+```js 2
+// 也可以在 CKEditor 的自訂圖片上傳的方法中使用：
+```
+
+</Step>
+
+<Step title="在需要使用的地方呼叫它" subtitle="ProductModal.vue">
+
+```jsx
+// 可以在 ProductModal.vue 中匯入使用：
+const { uploadInputRef, file, getUploadFile, upload } =
+  useUpload();
+const uploadImage = async () => {
+  const imgUrl = await upload();
+  if (imgUrl) {
+    if (product.value.imagesUrl) {
+      product.value.imagesUrl.push(imgUrl);
+    } else {
+      product.value.imagesUrl = [];
+      product.value.imagesUrl.push(imgUrl);
+    }
+  }
+};
+```
+
+```markup 10,11,15
+<label class="form-label" for="product-upload-file"
+  >上傳圖片</label
+>
+<div class="input-group">
+  <input
+    type="file"
+    name="file-to-upload"
+    class="form-control"
+    id="product-upload-file"
+    ref="uploadInputRef"
+    @change="getUploadFile"
+  />
+  <button
+    class="btn btn-outline-secondary"
+    @click.prevent="uploadImage"
+  >
+    上傳圖片
+  </button>
+</div>
+```
+
+</Step>
+
+<Step title="在需要使用的地方呼叫它">
+
+```js 2
+// 可以在 ProductModal.vue 中匯入使用：
+```
+
+```js
+// 也可以在 CKEditor 的自訂圖片上傳的方法中使用：
+```
+
+</Step>
+
+<Step title="在需要使用的地方呼叫它" subtitle="myUploadAdapter.js">
+
+```jsx
+// myUploadAdapter.js
+import { useUpload } from "@/hooks";
+const { file, upload: uploadImg } = useUpload();
+
+class MyUploadAdapter {
+  constructor(loader) {
+    this.loader = loader;
+  }
+  // 上傳圖片
+  upload() {
+    return new Promise((resolve, reject) => {
+      this.loader.file.then((loadFile) => {
+        file.value = loadFile;
+        return uploadImg().then((data) => {
+          resolve({ default: data });
+        });
+      });
+    });
+  }
+}
+export default MyUploadAdapter;
+```
+
+```jsx
+// 也可以在 CKEditor 的自訂圖片上傳的方法中使用：
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step subtitle="如果你和我一樣是個連複製貼上都懶的人">
+
+```jsx
+// myUploadAdapter.js
+import { useUpload } from "@/hooks";
+const { file, upload: uploadImg } = useUpload();
+
+class MyUploadAdapter {
+  constructor(loader) {
+    this.loader = loader;
+  }
+  // 上傳圖片
+  upload() {
+    return new Promise((resolve, reject) => {
+      this.loader.file.then((loadFile) => {
+        file.value = loadFile;
+        return uploadImg().then((data) => {
+          resolve({ default: data });
+        });
+      });
+    });
+  }
+}
+export default MyUploadAdapter;
+```
+
+```jsx
+// 透過事先封裝好的邏輯，可以讓我們這裡少寫很多重複的程式碼
+```
+
+</Step>
+
+<Step title="右邊是老師在第 9 週加碼直播時的程式碼" subtitle="這也許可以給你當參考">
+
+```jsx 1:13
+import { useUpload } from "@/hooks";
+const { file, upload: uploadImg } = useUpload();
+
+upload() {
+  return new Promise((resolve, reject) => {
+    this.loader.file.then((loadFile) => {
+      file.value = loadFile;
+      return uploadImg().then((data) => {
+        resolve({ default: data });
+      });
+    });
+  });
+}
+```
+
+```jsx
+upload() {
+  const formData = new FormData();
+  const url = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/admin/upload`;
+  return new Promise((resolve) => {
+    this.load.file
+      .then((loadFile) => {
+        formData.append('file-to-upload', loadFile);
+        return axios.post(url, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      })
+      .then((response) => {
+        resolve({
+          default: response.data.imageUrl,
+        });
+      });
+  });
+}
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+### 結尾 & 感言
+
+---
+
+## 願這三個月裡所有的努力都不會被辜負
+
+---
+
+## 祝大家都能找到理想的工作
+
+---
+
+## END
